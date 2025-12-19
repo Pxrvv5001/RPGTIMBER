@@ -60,71 +60,82 @@
                 </div>
 
                 <form id="contact-form" action="https://formspree.io/f/mykgkgjq" method="POST" class="contact-form-premium">
-    <h2>Send a Message</h2>
-    <p>Fill out the form below for a quote.</p>
-    
-    <div class="input-group">
-        <label>Full Name</label>
-        <input type="text" name="fullName" placeholder="e.g. Parv Goyal" required>
-    </div>
+                    <h2>Send a Message</h2>
+                    <p>Fill out the form below for a quote.</p>
+                    
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" placeholder="e.g. Parv Goyal" required>
+                    </div>
 
-    <div class="input-group">
-        <label>Phone Number</label>
-        <input type="text" name="phone" placeholder="e.g. +91 99999 99999" required>
-    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" placeholder="e.g. +91 99999 99999" required>
+                    </div>
 
-    <div class="input-group">
-        <label>Your Requirement</label>
-        <textarea name="message" rows="4" placeholder="I need a quote for..." required></textarea>
-    </div>
+                    <div class="input-group">
+                        <label>Your Requirement</label>
+                        <textarea name="message" rows="4" placeholder="I need a quote for..." required></textarea>
+                    </div>
 
-    <div id="status" style="margin-bottom: 15px; font-weight: bold; color: #c58f56;"></div>
+                    <div id="status" style="margin-bottom: 15px; font-weight: bold; color: #c58f56;"></div>
 
-    <button type="submit" class="btn btn-full">Submit Inquiry</button>
-</form>
-
-            </div>
+                    <button type="submit" class="btn btn-full">Submit Inquiry</button>
+                </form>
+                </div>
 
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 R P GOYAL & SONS. All rights reserved.</p>
+            <p>© 2025 R P GOYAL & SONS. All rights reserved.</p>
         </div>
     </footer>
-<script>
-    var form = document.getElementById("contact-form");
-    
-    async function handleSubmit(event) {
-        event.preventDefault(); // This stops the redirect!
-        var status = document.getElementById("status");
-        var data = new FormData(event.target);
-        
-        fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json' // Tells Formspree to return JSON, not a redirect
-            }
-        }).then(response => {
-            if (response.ok) {
-                status.innerHTML = "Thanks! We have received your inquiry.";
-                form.reset(); // Clears the form inputs
+
+    <script>
+        // Wait for the page to fully load
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById("contact-form");
+            var status = document.getElementById("status");
+
+            // Check if form exists to prevent errors
+            if (form) {
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault(); // STOP THE REDIRECT
+
+                    var data = new FormData(event.target);
+                    
+                    status.innerHTML = "Sending..."; // Visual feedback
+
+                    fetch(event.target.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json' // Request JSON response from Formspree
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            status.innerHTML = "Thanks! We have received your inquiry.";
+                            form.reset(); // Clear form inputs
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    status.innerHTML = "Oops! There was a problem submitting your form.";
+                                }
+                            });
+                        }
+                    }).catch(error => {
+                        status.innerHTML = "Oops! There was a problem submitting your form.";
+                        console.error('Error:', error);
+                    });
+                });
             } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                    } else {
-                        status.innerHTML = "Oops! There was a problem submitting your form."
-                    }
-                })
+                console.error("The form with id='contact-form' was not found in the HTML.");
             }
-        }).catch(error => {
-            status.innerHTML = "Oops! There was a problem submitting your form."
         });
-    }
-    form.addEventListener("submit", handleSubmit)
-</script>
+    </script>
 </body>
 </html>
