@@ -59,27 +59,27 @@
                     </div>
                 </div>
 
-                <form class="contact-form-premium">
-                    <h2>Send a Message</h2>
-                    <p>Fill out the form below for a quote.</p>
-                    
-                    <div class="input-group">
-                        <label>Full Name</label>
-                        <input type="text" placeholder="e.g. Parv Goyal">
-                    </div>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form-premium">
+    <h2>Send a Message</h2>
+    <p>Fill out the form below for a quote.</p>
+    
+    <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" name="fullName" placeholder="e.g. Parv Goyal" required>
+    </div>
 
-                    <div class="input-group">
-                        <label>Phone Number</label>
-                        <input type="text" placeholder="e.g. +91 99999 99999">
-                    </div>
+    <div class="input-group">
+        <label>Phone Number</label>
+        <input type="text" name="phone" placeholder="e.g. +91 99999 99999" required>
+    </div>
 
-                    <div class="input-group">
-                        <label>Your Requirement</label>
-                        <textarea rows="4" placeholder="I need a quote for..."></textarea>
-                    </div>
+    <div class="input-group">
+        <label>Your Requirement</label>
+        <textarea name="message" rows="4" placeholder="I need a quote for..." required></textarea>
+    </div>
 
-                    <button type="submit" class="btn btn-full">Submit Inquiry</button>
-                </form>
+    <button type="submit" class="btn btn-full">Submit Inquiry</button>
+</form>
 
             </div>
 
