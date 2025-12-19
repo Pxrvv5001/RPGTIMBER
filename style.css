@@ -1,0 +1,531 @@
+/* --- PREMIUM TIMBER THEME --- */
+html {
+    scroll-behavior: smooth;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #4a4a4a;
+    background-color: #fdfbf7; /* Very light warm paper color */
+}
+
+/* Utility */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+header {
+    background-color: #2b1b17; /* Very Dark Wood */
+    padding: 1.2rem 0;
+    position: sticky; top: 0; z-index: 1000;
+    border-bottom: 4px solid #c58f56; /* Gold/Oak Accent */
+}
+/* Styling for the Company Name text */
+.company-name {
+    color: #f4f4f4; /* Off-white color for readability */
+    font-family: 'Cinzel', serif; /* The classy wood-carved style font */
+    font-size: 1.2rem; /* Size of the text */
+    font-weight: 700;
+    margin-left: 15px; /* Adds space between the logo and the text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Adds a shadow so text pops against the wood background */
+}
+
+/* Optional: Make text gold when hovering */
+.logo-container:hover .company-name {
+    color: #c58f56;
+    transition: color 0.3s;
+}
+header .container { display: flex; justify-content: space-between; align-items: center; }
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Removes link underline */
+}
+
+.logo-img {
+    height: 70px; /* Controls the size of the logo */
+    width: auto;  /* Keeps the logo shape correct */
+    transition: transform 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Slight zoom effect when you hover */
+}
+
+.tree-icon { color: #c58f56; }
+
+header nav ul { list-style: none; display: flex; gap: 30px; }
+header nav ul li a { 
+    color: #e0e0e0; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; 
+}
+header nav ul li a:hover, header nav ul li a.active { color: #c58f56; }
+
+/* HERO SECTION */
+.hero {
+    /* USES YOUR DOWNLOADED FILE - NO MORE 404 ERRORS */
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(43,27,23,0.7), rgba(43,27,23,0.4));
+}
+
+.hero-content { position: relative; z-index: 2; color: #fff; max-width: 800px; padding: 20px; }
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-bottom: 2px solid #c58f56;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.hero p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 300; }
+
+.btn {
+    background-color: #c58f56;
+    color: #2b1b17;
+    padding: 14px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.btn:hover { background-color: #fff; color: #2b1b17; }
+
+/* SEGMENTS */
+.segments { padding: 80px 0; background-color: #fff; }
+
+.section-title {
+    text-align: center; font-family: 'Cinzel', serif; font-size: 2.5rem; color: #2b1b17; margin-bottom: 10px;
+}
+.underline { width: 80px; height: 3px; background: #c58f56; margin: 0 auto 50px auto; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.card-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content { padding: 30px; text-align: center; }
+
+.card h3 { font-family: 'Cinzel', serif; color: #2b1b17; margin-bottom: 15px; font-size: 1.4rem; }
+.card p { color: #666; font-size: 0.95rem; margin-bottom: 25px; }
+
+.link-btn {
+    color: #c58f56; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; border-bottom: 2px solid transparent; transition: 0.3s;
+}
+.link-btn:hover { border-bottom: 2px solid #c58f56; color: #2b1b17; }
+
+/* SHARED STYLES FOR ABOUT & CONTACT */
+.page-header {
+    background: linear-gradient(rgba(43,27,23,0.8), rgba(43,27,23,0.8)), url('https://images.unsplash.com/photo-1513467655676-561b2d19b210?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+.page-header h1 { font-family: 'Cinzel', serif; font-size: 3rem; }
+
+.content-section { padding: 60px 0; }
+.text-block h2 { font-family: 'Cinzel', serif; color: #2b1b17; font-size: 2rem; }
+.values-list li { border-left: 4px solid #c58f56; padding-left: 15px; margin-bottom: 20px; }
+
+/* Contact Form Tweaks */
+.contact-form { background: #fff; border: 1px solid #c58f56; }
+.info-item strong { color: #c58f56; }
+
+/* Footer */
+footer { background: #1a100d; color: #888; padding: 40px 0; text-align: center; font-size: 0.9rem; border-top: 4px solid #c58f56; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+}
+/* --- ANIMATIONS --- */
+
+/* 1. Define the "Float Up" Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* Starts 40px lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends in correct spot */
+    }
+}
+
+/* 2. Apply it to the Hero Text */
+.hero h1 {
+    animation: fadeInUp 1s ease-out forwards; /* Takes 1 second */
+}
+
+.hero p {
+    opacity: 0; /* Start invisible */
+    animation: fadeInUp 1s ease-out 0.3s forwards; /* 0.3s delay so it comes after title */
+}
+
+.hero .btn {
+    opacity: 0; /* Start invisible */
+    animation: fadeInUp 1s ease-out 0.6s forwards; /* 0.6s delay */
+}
+/* 3. Card Zoom Effect */
+.card {
+    overflow: hidden; /* Ensures the image doesn't spill out when zooming */
+}
+
+.card .card-image {
+    transition: transform 0.6s ease; /* Smooth transition */
+}
+
+.card:hover .card-image {
+    transform: scale(1.1); /* Zooms in by 10% */
+}
+/* 4. Scroll Reveal Classes */
+/* Only hide the Cards (on Homepage) for animation */
+.card {
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: all 1s ease-out; 
+}
+
+/* Force Text on other pages to be VISIBLE immediately */
+.section-title, .text-block {
+    opacity: 1 !important; 
+    transform: translateY(0) !important; 
+}
+
+.show {
+    opacity: 1 !important; 
+    transform: translateY(0) !important; 
+}
+/* 5. Staggered Animation for Business Segments */
+/* First card appears instantly */
+.card:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+/* Second card waits 200ms */
+.card:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+/* Third card waits 400ms */
+.card:nth-child(3) {
+    transition-delay: 400ms;
+}
+/* --- PREMIUM CONTACT PAGE STYLES --- */
+
+/* The Container for the whole card */
+.contact-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Big soft shadow */
+    border-radius: 10px;
+    overflow: hidden; /* Keeps corners rounded */
+    border-top: 5px solid #c58f56; /* Gold top border */
+}
+
+/* Left Side: Info */
+.contact-details {
+    flex: 1;
+    min-width: 300px;
+    background-color: #2b1b17; /* Dark Wood Background */
+    color: #fff;
+    padding: 40px;
+}
+
+.contact-details h2 {
+    font-family: 'Cinzel', serif;
+    color: #c58f56; /* Gold Text */
+    margin-bottom: 10px;
+}
+
+.divider-gold {
+    width: 50px;
+    height: 3px;
+    background-color: #c58f56;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.detail-item .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.map-container {
+    margin-top: 30px;
+    border: 2px solid #c58f56;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Right Side: Form */
+.contact-form-premium {
+    flex: 1.5;
+    min-width: 300px;
+    padding: 40px;
+    background-color: #fdfbf7; /* Light paper color */
+}
+
+.contact-form-premium h2 {
+    font-family: 'Cinzel', serif;
+    color: #2b1b17;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s;
+}
+
+/* Input Focus Effect (Glows Gold) */
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #c58f56;
+    box-shadow: 0 0 8px rgba(197, 143, 86, 0.2);
+    outline: none;
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}/* --- PREMIUM ABOUT PAGE STYLES --- */
+
+/* 1. Split Layout (Text + Image) */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.split-text {
+    flex: 1;
+}
+
+.gold-heading {
+    font-family: 'Cinzel', serif;
+    color: #c58f56; /* Gold */
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.lead-text {
+    font-size: 1.2rem;
+    color: #2b1b17;
+    margin-bottom: 20px;
+    border-left: 4px solid #c58f56;
+    padding-left: 20px;
+}
+
+.split-image {
+    flex: 1;
+    position: relative;
+}
+
+.split-image img {
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    box-shadow: 20px 20px 0px #2b1b17; /* Cool offset shadow effect */
+}
+
+/* 2. Stats Bar (Dark Strip) */
+.stats-bar {
+    background-color: #2b1b17; /* Dark Wood */
+    padding: 60px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-item h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #c58f56;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 3. Value Cards */
+.bg-light {
+    background-color: #fff;
+}
+
+.center-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.value-card {
+    background: #fdfbf7;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-bottom: 4px solid #c58f56; /* Gold bottom border */
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.icon-gold {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Mobile Fix for Split Layout */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column;
+    }
+    .split-image img {
+        box-shadow: 10px 10px 0px #2b1b17;
+    }
+}
+/* --- MOBILE OPTIMIZATION (Responsive Design) --- */
+@media (max-width: 768px) {
+
+    /* 1. Fix the Header (Stack Logo and Menu) */
+    .container {
+        width: 90%; /* Give it breathing room on sides */
+    }
+
+    header .container {
+        flex-direction: column; /* Stack logo on top, menu below */
+        text-align: center;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .company-name {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 1rem; /* Smaller font for name */
+    }
+
+    nav ul {
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap; /* Allows menu to wrap if needed */
+        gap: 15px;
+    }
+
+    /* 2. Fix the Hero Section (Reduce Text Size) */
+    .hero h1 {
+        font-size: 2rem; /* Smaller headline */
+        padding: 0 10px;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 3. Fix the Cards (Stack them 1 by 1) */
+    .grid-container, .grid-4 {
+        grid-template-columns: 1fr; /* Force 1 column layout */
+    }
+
+    /* 4. Fix About & Contact "Split Layouts" */
+    .split-layout {
+        flex-direction: column; /* Stack text on top, image below */
+        gap: 30px;
+    }
+
+    .contact-card-wrapper {
+        flex-direction: column; /* Stack map on top, form below */
+    }
+
+    .contact-details, .contact-form-premium {
+        width: 100%; /* Full width */
+        min-width: auto;
+    }
+    
+    /* 5. Adjust Stats Bar */
+    .stats-bar .grid-4 {
+        grid-template-columns: 1fr 1fr; /* 2 columns for stats looks ok on phone */
+    }
+}
